@@ -1,0 +1,204 @@
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 500px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #1e7ae9;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    height: inherit;
+    line-height: 500px;
+    text-align: center;
+    border: 5px solid black;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: #1e7ae9;
+    color: black;
+    height: 100%;
+    width: auto;
+    text-align: center;
+    border: 5px solid black;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back-content {
+    margin: 10px;
+    position: relative;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.heading-style {
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    font-size: large;
+    font-weight: bold;
+}
+
+.word-style {
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td {
+    padding: 10px;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Main view, move content down due to fixed navbar. */
+.main-wrapper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding-top: 50px;
+    background-image: url("../words.jpg");
+}
+
+/* Container for a sidebar. */
+.sidebar-container {
+    height: 100%;
+    width: 320px;
+    position: fixed;
+    margin-top: -100px;
+    padding-top: 50px;
+    border-right: 1px solid #ddd;
+
+}
+
+.sidebar-header {
+    color: #1b1e21;
+    position: relative;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Scrollable sidebar. */
+.sidebar {
+    background-color: midnightblue;
+    height: 100%;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.main-view {
+    margin-left: 330px;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    padding: 0px;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.test {
+    font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+    font-size: xx-large;
+    color: white;
+}
+
+.nav-pills li:last-child {
+    margin-bottom: 20px;
+}
+
+a:link, a:visited {
+    color: floralwhite;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+ol {
+    color: white;
+    margin-left: 30px;
+}
+
+a:hover {
+    color: white;
+}
+
+li {
+    text-indent: -10px;
+    font-size: medium;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+
+}
+
+li:hover, li:active {
+    text-indent: 0px;
+    font-size: x-large;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    color: dodgerblue;
+    background-color: dodgerblue;
+}
+
+button {
+    display: inline-block;
+    height: 100px;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    font-size: large;
+    color: white;
+    background-color: #1c61c3;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 9px #6e6e6e
+}
+
+.button:active {
+  box-shadow: 0 5px #474747;
+  transform: translateY(4px);
+}
+
+button:hover {
+    background-color: midnightblue;
+    cursor: pointer;
+}
